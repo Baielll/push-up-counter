@@ -33,7 +33,7 @@ export const PushUpCounter: FC = () => {
     }
 
     return (
-        <div className={s.counter} onClick={recordCount}>
+        <div className={s.counter} onDoubleClick={recordCount} onClick={recordCount}>
             <div className={s.count}>
             {removed ? (
                 <h1>{count}</h1>
