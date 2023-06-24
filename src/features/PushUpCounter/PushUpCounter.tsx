@@ -28,7 +28,7 @@ export const PushUpCounter: FC = () => {
     }
     const recordCountOndbClick = async (e: any) => {
         if(!excludeButtonRef.current?.contains(e.target as HTMLElement)) {
-            const newCount = count + 1
+            const newCount = count
             setCount(newCount)
             setValue(newCount)
             setRemoved(false)
