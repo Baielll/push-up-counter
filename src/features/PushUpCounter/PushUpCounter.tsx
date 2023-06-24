@@ -26,6 +26,14 @@ export const PushUpCounter: FC = () => {
         setRemoved(false)
         }
     }
+    const recordCountOndbClick = async (e: any) => {
+        if(!excludeButtonRef.current?.contains(e.target as HTMLElement)) {
+            const newCount = count + 1
+            setCount(newCount)
+            setValue(newCount)
+            setRemoved(false)
+        }
+    }
     const removeCount = () => {
         setCount(initialCount)
         deleteValue("count")
@@ -33,7 +41,7 @@ export const PushUpCounter: FC = () => {
     }
 
     return (
-        <div className={s.counter} onDoubleClick={recordCount} onClick={recordCount}>
+        <div className={s.counter} onDoubleClick={recordCountOndbClick} onClick={recordCount}>
             <div className={s.count}>
             {removed ? (
                 <h1>{count}</h1>
